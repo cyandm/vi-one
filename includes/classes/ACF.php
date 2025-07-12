@@ -35,6 +35,7 @@ class ACF
 	{
 		//PostTypes
 		self::forSlider();
+		self::forProducts();
 
 		//Taxonomies
 
@@ -73,6 +74,27 @@ class ACF
 
 		// register group
 		$acfGroup->register('اطلاعات');
+	}
+
+	private static function forProducts()
+	{
+		$acfGroup = new AcfGroup();
+
+		$acfGroup->layoutFields->addTab('products_gallery','گالری محصول');
+
+		$acfGroup->groupCustom->addGallery('lightbox', 'گالری محصول', ['width' => '50%'], 10);
+
+		$acfGroup->layoutFields->addTab('products_dec', 'توضیحات محصول');
+
+		$acfGroup->contentFields->addTextEditor('products_features', 'ویژگی محصول', ['width'=> '50%']);
+		
+		$acfGroup->contentFields->addTextEditor('products_specifications', 'مشخصات محصول', ['width'=> '50%']);
+
+		//location
+		$acfGroup->setLocation('post_type', '==', 'products');
+
+		// register group
+		$acfGroup->register('گالری');
 	}
 
 	private static function forHome()

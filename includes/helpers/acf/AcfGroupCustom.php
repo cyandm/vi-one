@@ -2,7 +2,13 @@
 
 namespace Cyan\Theme\Helpers\ACF;
 
-class AcfGroupCustom extends AcfGroup {
+class AcfGroupCustom {
+	protected $contentFields;
+
+	
+	public function __construct($contentFields) {
+		$this->contentFields = $contentFields;
+	}
 
 	/**
 	 * Add a gallery field
@@ -15,7 +21,7 @@ class AcfGroupCustom extends AcfGroup {
 	 */
 	public function addGallery( $name, $label, $additionalAttributes = [], $count = 1, $id = '' ) {
 		for ( $i = 1; $i < $count + 1; $i++ ) {
-			parent::addImage( $name . '_' . $i, $label . ' ' . $i, $additionalAttributes, $id . '_' . $i );
+			$this->contentFields->addImage( $name . '_' . $i, $label . ' ' . $i, $additionalAttributes, $id . '_' . $i );
 		}
 	}
 

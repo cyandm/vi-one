@@ -57,6 +57,7 @@ class AcfContentFields extends AcfField {
 		parent::addField( 'wysiwyg', $name, $label, [ 
 			'toolbar' => $additionalAttributes['toolbar'] ?? 'basic',
 			'media_upload' => $additionalAttributes['media_upload'] ?? 1,
+			'width' => $additionalAttributes['width'] ?? '',
 		], $id );
 	}
 }

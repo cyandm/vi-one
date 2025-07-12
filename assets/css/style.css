@@ -111,6 +111,12 @@
   }
 }
 
+@theme{
+  --color-cynBlue: #002D74;
+  --color-cynBlueGray: #07162C,
+  --color-cynText: #07162C,
+}
+
 .container {
   width: 100%;
   margin-right: auto;

@@ -37,11 +37,13 @@ class Register
 	public static function registerPostType()
 	{
 		self::makePostType('slider', 'اسلایدر', 'اسلاید ها', 'dashicons-slides', ['title']);
+		self::makePostType('products', 'محصول', 'محصولات', 'dashicons-cart', ['title', 'thumbnail', 'editor']);
 	}
 
 	public static function registerTaxonomy()
 	{
 		self::makeTaxonomy('slider_place', 'مکان نمایش اسلایدر', 'مکان ها', ['slider'], true);
+		self::makeTaxonomy('product_cat', 'دسته بندی محصولات', 'دسته ها', ['products'], true);
 	}
 
 	/**
